@@ -12,6 +12,21 @@
 
 
 ## Python?
+
+```Python
+def send_message(peer_id, message):
+    try:
+        vk.messages.send(
+            peer_id=peer_id,
+            message=message,
+            random_id=get_random_id(),
+        )
+        time.sleep(0.35)
+    except Exception as e:
+        print(Fore.RED + f'[ {datetime.datetime.now():{time_format}} ] [ ERROR ]: def send_message() ---> {e}')
+        infinity_polling()
+```
+
 ___
 ## Зачем он нужен?
 ___
